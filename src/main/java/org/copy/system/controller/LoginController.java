@@ -11,6 +11,7 @@ import org.copy.common.domain.Tree;
 import org.copy.common.service.FileService;
 import org.copy.common.utils.MD5Utils;
 import org.copy.common.utils.R;
+import org.copy.common.utils.ShiroUtils;
 import org.copy.system.domain.MenuDO;
 import org.copy.system.service.MenuService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +34,7 @@ public class LoginController extends BaseController {
     @Autowired
     FileService fileService;
 
-    @GetMapping({ "/", "" })
+    @GetMapping("/")
     String welcome(Model model) {
 
         return "redirect:/blog";
@@ -77,5 +78,12 @@ public class LoginController extends BaseController {
         }
         model.addAttribute("username", getUser().getUsername());
         return "index_v1";
+    }
+
+    // Shiroconfig 配置了logout 后，这个方法永远不会被调用到了
+    @GetMapping({"/logout"})
+    String logout() {
+        ShiroUtils.logout();
+        return "redirect:/login";
     }
 }

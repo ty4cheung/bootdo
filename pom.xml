@@ -153,15 +153,15 @@
                 <!--</exclusion>-->
             <!--</exclusions>-->
         <!--</dependency>-->
-        <!--&lt;!&ndash; SpringWebSocket依赖 &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework.boot</groupId>-->
-            <!--<artifactId>spring-boot-starter-websocket</artifactId>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.springframework</groupId>-->
-            <!--<artifactId>spring-context-support</artifactId>-->
-        <!--</dependency>-->
+        <!-- SpringWebSocket依赖 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-websocket</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
         <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
         <!--&lt;!&ndash;<groupId>org.springframework.boot</groupId>&ndash;&gt;-->
         <!--&lt;!&ndash;<artifactId>spring-boot-devtools</artifactId>&ndash;&gt;-->
@@ -239,6 +239,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+
     </dependencies>
     <build>
         <plugins>
