@@ -86,4 +86,9 @@ public class LoginController extends BaseController {
         ShiroUtils.logout();
         return "redirect:/login";
     }
+
+    @GetMapping("/main")
+    String main() {
+        return "main";
+    }
 }
