@@ -60,7 +60,7 @@
         </where>
     </select>
 
-    <insert id="save" parameterType="com.bootdo.common.domain.DictDO"
+    <insert id="save" parameterType="org.copy.common.domain.DictDO"
             useGeneratedKeys="true" keyProperty="id">
         insert into sys_dict
         (
@@ -94,7 +94,7 @@
         )
     </insert>
 
-    <update id="update" parameterType="com.bootdo.common.domain.DictDO">
+    <update id="update" parameterType="org.copy.common.domain.DictDO">
         update sys_dict
         <set>
             <if test="name != null">`name` = #{name}, </if>
@@ -125,7 +125,7 @@
         </foreach>
     </delete>
 
-    <select id="listType" resultType="com.bootdo.common.domain.DictDO">
+    <select id="listType" resultType="org.copy.common.domain.DictDO">
         select distinct `type` , description from sys_dict
     </select>
 </mapper>

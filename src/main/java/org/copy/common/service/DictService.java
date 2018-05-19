@@ -18,39 +18,39 @@ public class DictService {
     @Autowired
     DictDao dictDao;
 
-    DictDO get(Long id){
+    public DictDO get(Long id){
         return dictDao.get(id);
     }
 
-    List<DictDO> list(Map<String, Object> map){
+    public List<DictDO> list(Map<String, Object> map){
         return dictDao.list(map);
     }
 
-    int count(Map<String, Object> map){
+    public int count(Map<String, Object> map){
         return dictDao.count(map);
     }
 
-    int save(DictDO dict){
+    public int save(DictDO dict){
         return dictDao.save(dict);
     }
 
-    int update(DictDO dict){
+    public int update(DictDO dict){
         return dictDao.update(dict);
     }
 
-    int remove(Long id){
+    public int remove(Long id){
         return dictDao.remove(id);
     }
 
-    int batchRemove(Long[] ids){
+    public int batchRemove(Long[] ids){
         return dictDao.batchRemove(ids);
     }
 
-    List<DictDO> listType(){
+    public List<DictDO> listType(){
         return dictDao.listType();
     }
 
-    String getName(String type,String value){
+    public String getName(String type,String value){
         Map<String, Object> param = new HashMap<String, Object>(16);
         param.put("type", type);
         param.put("value", value);
@@ -62,7 +62,7 @@ public class DictService {
      * @return
      * @param userDO
      */
-    List<DictDO> getHobbyList(UserDO userDO){
+    public List<DictDO> getHobbyList(UserDO userDO){
         Map<String, Object> param = new HashMap<>(16);
         param.put("type", "hobby");
         List<DictDO> hobbyList = dictDao.list(param);
@@ -86,7 +86,7 @@ public class DictService {
      * 获取性别列表
      * @return
      */
-    List<DictDO> getSexList(){
+    public List<DictDO> getSexList(){
         Map<String, Object> param = new HashMap<>(16);
         param.put("type", "sex");
         return dictDao.list(param);
@@ -96,7 +96,7 @@ public class DictService {
      * 根据type获取数据
      * @return
      */
-    List<DictDO> listByType(String type){
+    public List<DictDO> listByType(String type){
         Map<String, Object> param = new HashMap<>(16);
         param.put("type", type);
         return dictDao.list(param);
