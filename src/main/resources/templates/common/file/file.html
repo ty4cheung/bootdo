@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bootdo - 文件管理器</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href="/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/css/font-awesome.css?v=4.4.0" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
+    <link href="/css/layui.css" rel="stylesheet">
+    <link href="/css/style.css?v=4.1.0" rel="stylesheet">
+    <style>
+        .aactive {
+            color: #13b5b7 !important;
+        }
+        .hactive:hover{
+            color: #13b5b7 !important;
+        }
+    </style>
+</head>
+<body class="gray-bg">
+
+<!-- 全局js -->
+<script src="/js/jquery.min.js?v=2.1.4"></script>
+<script src="/js/bootstrap.min.js?v=3.3.6"></script>
+<script src="/js/bootstrap-paginator.min.js"></script>
+
+<script src="/js/content.js?v=1.0.0"></script>
+<script src="/js/layui.js"></script>
+<script src="/js/plugins/clipboard/clipboard.min.js"></script>
+<script src="/js/plugins/layer/layer.min.js"></script>
+<script src="/js/vue.min.js"></script>
+
+<script type="text/javascript">
+    var app = new Vue({
+        e1: '#app',
+        data: {
+            limit: 12,
+            offset: 0,
+            total: 0,
+            file: '',
+            type: '',
+            rows: '',
+        },
+        methods: {
+            getData: function() {
+                $.getJSON("/common/sysFile/list",{
+                    limit: this.limit,
+                    offset: this.offset,
+                    type: this.type
+                }, function (r){
+                    app.total = r.total;
+                    app.rows = r.rows;
+                    app.page();
+                });
+            },
+            page: function(){
+
+                var options = {
+                    currentPage: app.offset / 12 + 1, //当前页
+                    totalPages: app.total / (12 + 1) + 1, //总页数
+                    numberofPages: 4, //显示的页数
+                    bootstrapMajorVersion: 3,
+                    alignment: 'center',
+                    size: 'large',
+                    shouldShowPage: true,
+                    itemTexts: function (type, page, current) { //修改显示文字
+                        switch (type) {
+                            case "first":
+                                return "首页";
+                            case "prev":
+                                return "上一页";
+                            case "next":
+                                return "下一页";
+                            case "last":
+                                return "尾页";
+                            case "page":
+                                return page;
+                        }
+                    },
+                    onPageClicked: function (event, originalEvent, type, page) {
+                        app.offset = (page - 1) * 12;
+                        app.getData();
+                    }
+                };
+                $('#page').bootstrapPaginator(options);
+            },
+            remove: function(id) {
+                layer.confirm('确定要删除选中的记录? ',{
+                       btn: ['确定', '取消']
+                },function(){
+                     $.ajax({
+                        url: "/common/sysFile/remove",
+                        type: "post",
+                        data: {
+                            'id': id
+                        },
+                     },success: function (r) {
+                         if (r.code == 0) {
+                            layer.msg(r.msg);
+                            app.getData();
+                         } else {
+                            layer.msg(r.msg);
+                            app.getData();
+                         }
+                     });
+                })
+            },
+            changeType: function(i) {
+                this.type = i;
+                this.offset = 0;
+                this.getData();
+            }
+        },
+        created: function() {
+            this.changeType('')
+        }
+    });
+</script>
+<script type="text/javascript">
+    var clipboard = new Clipboard('button.copy', {
+        text: function (trigger) {
+            layer.msg('文件路径已复制到粘贴板');
+            return $(trigger).attr('url');
+        }
+    });
+    layui.use('upload', function (){
+       var upload = layui.upload;
+       //执行实例
+       var uploadInst = upload.render({
+           elem: '#test1', //绑定元素
+           url: '/common/sysFile/upload', //上传接口
+           size: 1000,
+           accept: 'file',
+           done: function (r) {
+               layer.msg(r.msg);
+               app.getData();
+           },
+           error: function (r) {
+               layer.msg(r.msg);
+           }
+       });
+    });
+</script>
+</body>
+</html>
