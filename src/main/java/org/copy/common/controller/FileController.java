@@ -4,9 +4,7 @@ import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.copy.common.config.BootdoConfig;
 import org.copy.common.domain.FileDO;
 import org.copy.common.service.FileService;
-import org.copy.common.utils.FileType;
-import org.copy.common.utils.FileUtil;
-import org.copy.common.utils.R;
+import org.copy.common.utils.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +14,7 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -32,7 +31,7 @@ public class FileController extends BaseController {
     @Autowired
     private BootdoConfig bootdoConfig;
 
-    @GetMapping
+    @GetMapping()
     @RequiresPermissions("common:sysFile:sysFile")
     public String sysFile(Model model){
         Map<String, Object> params = new HashMap<>(16);
@@ -149,4 +148,17 @@ public class FileController extends BaseController {
         }
         return R.error();
     }
+
+    @ResponseBody
+    @GetMapping("/list")
+    @RequiresPermissions("common:sysFile:sysFile")
+    public PageUtils list(@RequestParam Map<String, Object> params) {
+        // 查询列表数据
+        Query query = new Query(params);
+        List<FileDO> sysFileList = fileService.list(query);
+        int total = fileService.count(query);
+        PageUtils pageUtils = new PageUtils(sysFileList, total);
+        return pageUtils;
+    }
+
 }
