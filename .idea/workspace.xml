@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="382af23f-2fbe-45c7-bb3d-f7c5aa7cfd5b" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/annotation/Log.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/aspect/LogAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/dao/LogDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/domain/LogDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/domain/PageDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/service/LogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/utils/HttpContextUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/utils/IPUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/utils/ImageUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/common/utils/JSONUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/system/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/copy/system/controller/MenuController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/copy/system/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/copy/system/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/copy/system/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/copy/system/service/UserService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -33,11 +22,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/org/copy/system/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="354">
-              <caret line="237" selection-start-line="237" selection-end-line="237" />
+            <state relative-caret-position="-1119">
+              <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#list#0;class#UserController#0" />
@@ -54,6 +43,27 @@
                 <element signature="method#tree#0;class#UserController#0" />
                 <element signature="method#personal#0;class#UserController#0" />
                 <element signature="method#uploadImg#0;class#UserController#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/org/copy/system/controller/MenuController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="430">
+              <caret line="123" column="59" selection-start-line="123" selection-start-column="59" selection-end-line="123" selection-end-column="59" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#list#0;class#MenuController#0" />
+                <element signature="method#edit#0;class#MenuController#0" />
+                <element signature="method#save#0;class#MenuController#0" />
+                <element signature="method#update#0;class#MenuController#0" />
+                <element signature="method#remove#0;class#MenuController#0" />
+                <element signature="method#tree#0;class#MenuController#0" />
+                <element signature="e#3184#3192#0" expanded="true" />
+                <element signature="method#tree#1;class#MenuController#0" />
+                <element signature="e#3381#3389#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -90,6 +100,8 @@
       <find>com.bootdo.</find>
       <find>searchName</find>
       <find>addD</find>
+      <find>list</find>
+      <find>sys/user/list&quot;</find>
     </findStrings>
     <replaceStrings>
       <replace>org.copy</replace>
@@ -104,7 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/org/copy/oa/config/WebSocketConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/copy/oa/controller/NotifyController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mybatis/oa/NotifyMapper.xml" />
         <option value="$PROJECT_DIR$/src/main/java/org/copy/system/controller/LoginController.java" />
@@ -155,6 +166,7 @@
         <option value="$PROJECT_DIR$/src/main/java/org/copy/common/utils/ImageUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/copy/system/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/copy/system/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/org/copy/system/controller/MenuController.java" />
       </list>
     </option>
   </component>
@@ -181,7 +193,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,34 +258,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mybatis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootdo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootdo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootdo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootdo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="bootdo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="bootdo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="appjs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bootdo" type="b2602c69:ProjectViewProjectNode" />
@@ -301,13 +285,14 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
               <item name="system" type="462c0819:PsiDirectoryNode" />
-              <item name="dept" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -427,8 +412,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="81" y="30" width="1796" height="998" extended-state="0" />
-    <editor active="true" />
+    <frame x="81" y="30" width="1796" height="998" extended-state="1" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Messages" order="7" weight="0.32716763" />
@@ -437,13 +421,13 @@
       <window_info anchor="right" id="Maven Projects" order="3" sideWeight="0.49566725" weight="0.32949308" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3282887" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32596043" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3255814" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.29550692" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29896313" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49740034" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.39697322" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39697322" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Coverage" order="4" sideWeight="0.5043328" side_tool="true" weight="0.32949308" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -466,13 +450,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error/403.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/error/404.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="361">
@@ -664,9 +641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="15" column="46" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -703,13 +677,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/system/user/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="20" column="57" lean-forward="true" selection-start-line="20" selection-start-column="57" selection-end-line="20" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mybatis/system/UserRoleMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -728,9 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -752,9 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -762,20 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
           <caret line="56" column="5" lean-forward="true" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#beanToJson#0;class#JSONUtils#0" />
-            <element signature="method#beanToJson#0;class#JSONUtils#0" />
-            <element signature="docComment;method#beanToJson#1;class#JSONUtils#0" />
-            <element signature="method#beanToJson#1;class#JSONUtils#0" />
-            <element signature="docComment;method#stringToJsonByFastjson#0;class#JSONUtils#0" />
-            <element signature="method#stringToJsonByFastjson#0;class#JSONUtils#0" />
-            <element signature="docComment;method#jsonToBean#0;class#JSONUtils#0" />
-            <element signature="method#jsonToBean#0;class#JSONUtils#0" />
-            <element signature="docComment;method#jsonToMap#0;class#JSONUtils#0" />
-            <element signature="e#1883#1913#0" expanded="true" />
-            <element signature="method#jsonToMap#0;class#JSONUtils#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -783,9 +730,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="10" column="5" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -793,9 +737,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="7" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
-          <folding>
-            <element signature="method#getIpAddr#0;class#IPUtils#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -803,9 +744,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="35">
           <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -813,9 +751,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
           <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -823,9 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
           <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -833,9 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
           <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -843,15 +772,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-345">
           <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="method#get#0;class#RoleService#0" />
-            <element signature="method#list#0;class#RoleService#0" />
-            <element signature="method#save#0;class#RoleService#0" />
-            <element signature="method#update#0;class#RoleService#0" />
-            <element signature="method#remove#0;class#RoleService#0" />
-            <element signature="method#list#1;class#RoleService#0" />
-            <element signature="method#batchremove#0;class#RoleService#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -859,9 +779,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -869,9 +786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1004">
           <caret line="66" column="5" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -904,10 +818,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/system/user/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="58" column="77" lean-forward="true" selection-start-line="58" selection-start-column="77" selection-end-line="58" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/org/copy/system/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="237" selection-start-line="237" selection-end-line="237" />
+        <state relative-caret-position="-1119">
+          <caret line="58" lean-forward="true" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#list#0;class#UserController#0" />
@@ -924,6 +845,25 @@
             <element signature="method#tree#0;class#UserController#0" />
             <element signature="method#personal#0;class#UserController#0" />
             <element signature="method#uploadImg#0;class#UserController#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/org/copy/system/controller/MenuController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="123" column="59" selection-start-line="123" selection-start-column="59" selection-end-line="123" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#list#0;class#MenuController#0" />
+            <element signature="method#edit#0;class#MenuController#0" />
+            <element signature="method#save#0;class#MenuController#0" />
+            <element signature="method#update#0;class#MenuController#0" />
+            <element signature="method#remove#0;class#MenuController#0" />
+            <element signature="method#tree#0;class#MenuController#0" />
+            <element signature="e#3184#3192#0" expanded="true" />
+            <element signature="method#tree#1;class#MenuController#0" />
+            <element signature="e#3381#3389#0" expanded="true" />
           </folding>
         </state>
       </provider>

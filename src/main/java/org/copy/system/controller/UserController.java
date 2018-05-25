@@ -48,6 +48,7 @@ public class UserController extends BaseController {
     }
 
     @GetMapping("/list")
+    @ResponseBody
     public PageUtils list(@RequestParam Map<String,Object> params){
         Query query = new Query(params);
         List<UserDO> sysUserList = userService.list(query);
