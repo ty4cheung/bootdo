@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh_CN" xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-content">
+                        <form class="form-horizontal m-t" id="signupForm">
+                            <input id="parentId" name="parentId" type="hidden" th:value="${pId}">
+                            <div class="form-group">
+                                <label class="col-sm-3 control-label">上级菜单：</label>
+                                <div class="col-sm-8">
+                                    <input id="" name="" class="form-control" type="text" th:value="${pName}" readonly>
+                                </div>
+                            </div>
+                            <div class="from-group">
+                                <label class="col-sm-3 control-label">菜单类型：</label>
+                                <div class="col-sm-8">
+                                    <label class="radio-inline">
+                                        <input type="radio" name="type" value="0" />目录
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="type" value="1" />菜单
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="type" value="2" />按钮
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

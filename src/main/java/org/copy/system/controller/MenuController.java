@@ -33,6 +33,7 @@ public class MenuController extends BaseController {
 
     @RequiresPermissions("sys:menu:menu")
     @RequestMapping("/list")
+    @ResponseBody
     List<MenuDO> list(@RequestParam Map<String,Object> params){
         List<MenuDO> menuDOList = menuService.list(params);
         return menuDOList;
@@ -111,6 +112,10 @@ public class MenuController extends BaseController {
         }
     }
 
+    /**
+     * 获取菜单列表
+     * @return
+     */
     @GetMapping("/tree")
     @ResponseBody
     Tree<MenuDO> tree() {
@@ -119,6 +124,11 @@ public class MenuController extends BaseController {
         return tree;
     }
 
+    /**
+     * 根据角色id获取菜单列表
+     * @param roleId
+     * @return
+     */
     @GetMapping("/tree/{roleId}")
     @ResponseBody
     Tree<MenuDO> tree(@PathVariable("roleId") Long roleId) {
