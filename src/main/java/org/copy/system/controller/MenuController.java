@@ -64,6 +64,7 @@ public class MenuController extends BaseController {
         } else {
             model.addAttribute("pName",menuService.get(pid).getName());
         }
+        model.addAttribute("menu", menuDO);
         return prefix + "/edit";
     }
 

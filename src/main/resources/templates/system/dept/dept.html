@@ -8,7 +8,16 @@
         <div class="col-sm-12">
             <div class="ibox">
                 <div class="ibox-body">
-                    <div class="fixed-table-toolbar"></div>
+                    <div class="fixed-table-toolbar">
+                        <div class="columns pull-left">
+                            <button shiro:hasPermission="system:sysDept:add" type="button" class="btn  btn-primary" onclick="add(0)">
+                                <i class="fa fa-plus hidden" aria-hidden="true"></i>添加
+                            </button>
+                            <button shiro:hasPermission="system:sysDept:batchRemove" type="button" class="btn  btn-danger" onclick="batchRemove()">
+                                <i class="fa fa-trash" aria-hidden="true"></i>删除
+                            </button>
+                        </div>
+                    </div>
                     <table id="exampleTable" data-mobile-responsive="true"></table>
                 </div>
             </div>
