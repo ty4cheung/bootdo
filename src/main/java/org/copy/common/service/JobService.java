@@ -2,6 +2,7 @@ package org.copy.common.service;
 
 import org.copy.common.dao.TaskDao;
 import org.copy.common.domain.TaskDO;
+import org.copy.common.quartz.utils.QuartzManager;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +15,9 @@ public class JobService {
 
     @Autowired
     private TaskDao taskScheduleJobMapper;
+
+    @Autowired
+    QuartzManager quartzManager;
 
     public TaskDO get(Long id) {
         return taskScheduleJobMapper.get(id);
