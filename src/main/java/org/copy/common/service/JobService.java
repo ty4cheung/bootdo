@@ -1,12 +1,16 @@
 package org.copy.common.service;
 
+import org.copy.common.config.Constant;
 import org.copy.common.dao.TaskDao;
+import org.copy.common.domain.ScheduleJob;
 import org.copy.common.domain.TaskDO;
 import org.copy.common.quartz.utils.QuartzManager;
+import org.copy.common.utils.ScheduleJobUtils;
 import org.quartz.SchedulerException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -62,5 +66,45 @@ public class JobService {
             }
         }
         return taskScheduleJobMapper.batchRemove(ids);
+    }
+
+    public void initSchedule() throws SchedulerException {
+        // 这里获取任务信息数据
+        List<TaskDO> jobList = taskScheduleJobMapper.list(new HashMap<>(16));
+        for (TaskDO scheduleJob : jobList) {
+            if ("1".equals(scheduleJob.getJobStatus())) {
+                ScheduleJob job =ScheduleJobUtils.entityToData(scheduleJob);
+                quartzManager.addJob(job);
+            }
+        }
+    }
+
+    public void changeSataus(Long jobId,String cmd) throws SchedulerException {
+        TaskDO scheduleJob = get(jobId);
+        if (scheduleJob == null) {
+            return;
+        }
+        if (Constant.STATUS_RUNNING_STOP.equals(cmd)) {
+            quartzManager.deleteJob(ScheduleJobUtils.entityToData(scheduleJob));
+            scheduleJob.setJobStatus(ScheduleJob.STATUS_NOT_RUNNING);
+        } else {
+            if (Constant.STATUS_RUNNING_START.equals(cmd)) {
+            } else {
+                scheduleJob.setJobStatus(ScheduleJob.STATUS_RUNNING);
+                quartzManager.addJob(ScheduleJobUtils.entityToData(scheduleJob));
+            }
+        }
+        update(scheduleJob);
+    }
+
+    public void updateCron(Long jobId) {
+        TaskDO scheduleJob = get(jobId);
+        if (scheduleJob == null) {
+            return;
+        }
+        if (ScheduleJob.STATUS_RUNNING.equals(scheduleJob.getJobStatus())) {
+            quartzManager.updateJobCron(ScheduleJobUtils.entityToData(scheduleJob));
+        }
+        update(scheduleJob);
     }
 }
