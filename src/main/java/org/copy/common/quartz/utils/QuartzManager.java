@@ -7,7 +7,6 @@ import org.quartz.impl.matchers.GroupMatcher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -25,7 +24,7 @@ public class QuartzManager {
      */
     public void addJob(ScheduleJob job){
         try {
-            Class<? extends Job> jobClass = (Class<? extends Job>) Class.forName(job.getBeanClass()).newInstance();
+            Class<? extends Job> jobClass = (Class<? extends Job>) Class.forName(job.getBeanClass()).newInstance().getClass();
             JobDetail jobDetail = JobBuilder.newJob(jobClass).withIdentity(job.getJobName(),job.getJobGroup()).build();
             // 定义调度触发规则
             // 使用cornTrigger规则

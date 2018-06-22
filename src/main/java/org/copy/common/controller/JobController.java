@@ -134,6 +134,7 @@ public class JobController extends BaseController {
         }
         try {
             taskScheduleJobService.changeSataus(id, cmd);
+            return R.ok("任务" + label + "成功");
         } catch (SchedulerException e) {
             e.printStackTrace();
         }

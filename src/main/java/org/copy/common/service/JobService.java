@@ -88,7 +88,7 @@ public class JobService {
             quartzManager.deleteJob(ScheduleJobUtils.entityToData(scheduleJob));
             scheduleJob.setJobStatus(ScheduleJob.STATUS_NOT_RUNNING);
         } else {
-            if (Constant.STATUS_RUNNING_START.equals(cmd)) {
+            if (!Constant.STATUS_RUNNING_START.equals(cmd)) {
             } else {
                 scheduleJob.setJobStatus(ScheduleJob.STATUS_RUNNING);
                 quartzManager.addJob(ScheduleJobUtils.entityToData(scheduleJob));
@@ -97,7 +97,7 @@ public class JobService {
         update(scheduleJob);
     }
 
-    public void updateCron(Long jobId) {
+    public void updateCron(Long jobId) throws SchedulerException {
         TaskDO scheduleJob = get(jobId);
         if (scheduleJob == null) {
             return;

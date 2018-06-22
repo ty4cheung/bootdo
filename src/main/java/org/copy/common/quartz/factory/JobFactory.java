@@ -6,6 +6,8 @@ import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.scheduling.quartz.AdaptableJobFactory;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 public class JobFactory extends AdaptableJobFactory {
 
@@ -14,6 +16,8 @@ public class JobFactory extends AdaptableJobFactory {
 
     @Override
     protected Object createJobInstance(TriggerFiredBundle bundle) throws Exception {
-        return super.createJobInstance(bundle);
+        Object instance = super.createJobInstance(bundle);
+        capableBeanFactory.autowireBean(instance);
+        return instance;
     }
 }
